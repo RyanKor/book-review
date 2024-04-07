@@ -491,7 +491,7 @@ double, 그러니까 64비트 체계에서는 지수부가 11비트, 가수부�
 키보드에 있는 모든 기호에 대해 **7비트** 수 값을 할당했다.
 대부분의 문자 인코딩이 아스키에 기초를 두고 있다.
 
-![아스키코드표](https://cdn.discordapp.com/attachments/879215554379018243/972183959242936340/unknown.png)
+![아스키코드표](https://github.com/RyanKor/book-review/assets/40455392/64bad519-d68d-4743-bedf-2660641e13bb)
 
 - 33개의 출력 불가능한 제어문자
 - 공백을 비롯한 95개의 출력 가능한 문자
@@ -502,7 +502,7 @@ double, 그러니까 64비트 체계에서는 지수부가 11비트, 가수부�
 **제어 문자표**
 제어할 때 쓰는 코드이다.
 
-![아스키 제어문자](https://cdn.discordapp.com/attachments/879215554379018243/972185735086108672/unknown.png)
+![아스키 제어문자](https://github.com/RyanKor/book-review/assets/40455392/4757d231-aae6-45e1-aaca-1754fe0f271e)
 
 이 중 상당수는 통신 제어를 위한 문자이다.
 ex) ACK(수신확인): 메시지를 받았음, NAK(반수신확인): 메시지를 받지 못함
