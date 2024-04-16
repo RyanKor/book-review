@@ -31,7 +31,7 @@
 1. `안티키테라` 기계 Antikythera.  
 : 사용자가 다이얼을 돌려서 날짜를 입력하고 크랭크를 돌려서  
  해당 날짜의 태양의 위치나 달의 위치와 같은 천문학 계산을 수행하는 기계.
-<p align="center"><img src="https://w.namu.la/s/0d2488a9ddd1bfb2a921f0cd33b3077e1c7d9c1049632596238f4d083d01b36fd4bf9acceaab2715b431aa1dd43205dd7a005722c243a1a0edcafdbb97463576484c93fc8305b753ab66f4c0101288ba1f8c12d9b402322002c448169e2de33d" alt="안티키테라 기계" width="300"/></p>
+<p align="center"><img src="https://github.com/RyanKor/book-review/assets/40455392/6c462ecf-8f55-4eed-8f60-880b9f114147" alt="안티키테라 기계" width="300"/></p>
 
 <br/>
 
@@ -49,7 +49,7 @@
  : 많은 사람에게 최초로 대량 생산된 계산 장치.  
  : log(x \* y) = log(x) + log(y) 라는 사실을 이용해 곱셈을 수행하는 기계.  
  : 계산자로 고정된 x로그 눈금과 움직이는 y로그 눈금의 기준선을 맞추면 두 수의 곱을 구할 수 있다.
-<p align="center"><img src="https://i0.wp.com/innowiki.org/wp-content/uploads/2019/08/slide-rule.jpg?w=1200&ssl=1" alt="계산자" width="300"></p>
+<p align="center"><img src="https://github.com/RyanKor/book-review/assets/40455392/bc922ffc-d326-419b-9835-a9e397d86f00" alt="계산자" width="300"></p>
 
 <br/>
 
