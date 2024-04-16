@@ -145,7 +145,7 @@
 
 <br/>
 
-<p align="center"><img src-"https://images.velog.io/images/ricky0813/post/44f55b06-bca8-4cc7-abe4-12e90146f359/image.png" alt="카메라 필름 전이 함수 그래프" width="300"></p>
+<p align="center"><img src="https://github.com/RyanKor/book-review/assets/40455392/3b5db1ed-0c48-4192-b346-2a2c15d29a03" alt="카메라 필름 전이 함수 그래프" width="300"></p>
 
 <br/>
 
@@ -503,6 +503,7 @@ NPN, PNP, N, P채널이라는 용어는 샌드위치 구성 방법을 뜻한다.
 혹은 게이트의 조합으로 만든 고수준의 기본 기능 요소를 사용해 더 고수준의 부품을 만들 수 있다.
 
 <br />
+
 ## 가산기
 
 #### 반가산기
@@ -511,7 +512,7 @@ NPN, PNP, N, P채널이라는 용어는 샌드위치 구성 방법을 뜻한다.
 61p에서 두 비트의 합은 각 비트의 XOR, 올림은 두 비트의 AND라는 것을 배웠다.
 이를 게이트로 구현하면 아래와 같다.
 
-![반가산기](https://cdn.discordapp.com/attachments/879215554379018243/974669368027938816/IMG_9314.jpg)
+![반가산기](https://github.com/RyanKor/book-review/assets/40455392/bb39a12b-d6a0-41dc-8864-d91a8bf55165)
 
 AND 게이트 하나와 XOR 게이트 하나로 이루어짐을 알 수 있다. 이를 반가산기(half adder)라고 부른다. 이렇게 두 비트를 더할 때는 반가산기로도 충분하다.
 
@@ -520,7 +521,8 @@ AND 게이트 하나와 XOR 게이트 하나로 이루어짐을 알 수 있다. 
 #### 전가산기
 
 그러나 반가산기는 다른 자리에서 올라오는 올림을 처리할 수 없다. 이를 위해 세 번째 입력이 필요하다. 세 입력 중 2개 이상이 1일 때 올림이 발생한다. 이를 고려한 것이 전가산기이다.
-![전가산기](https://cdn.discordapp.com/attachments/879215554379018243/974669368367652904/IMG_9315.jpg)
+
+![전가산기](https://github.com/RyanKor/book-review/assets/40455392/ecdc68e3-21fb-4c8e-b7af-da2c140e876f)
 
 **합**: C XOR (A XOR B)
 **올림**: (A AND B) OR (A AND C) OR (B AND C)
@@ -543,7 +545,7 @@ AND 게이트 하나와 XOR 게이트 하나로 이루어짐을 알 수 있다. 
 
 #### 리플 자리올림 가산기
 
-![리플 자리올림 가산기](https://cdn.discordapp.com/attachments/879215554379018243/974669367948222505/IMG_9316.jpg)
+![리플 자리올림 가산기](https://github.com/RyanKor/book-review/assets/40455392/2512ff6c-909c-40e8-aa16-e7a7665dffb6)
 
 전가산기로 여러 비트를 더하는 가산기를 만들 수 있다. 리플 자리올림 계산기는 전가산기를 여러개 이어붙인 형태인데, 자리올림이 아래쪽 비트로 부터 위쪽 비트로 물결이 퍼져나가는 것처럼 전달된다.
 아래 비트로 부터 자리 올림수 출력을 받아야 하기 때문에, 비트 하나를 처리할 때마다, 게이트 2개에 해당하는 출력 시간 지연이 발생한다. 이러한 점은 32비트, 64비트 가산기를 만들면 (비트가 커질수록) 지연 시간이 더 커지게 된다.
@@ -590,7 +592,8 @@ C3 = (A2 AND B2)
 **3:8 디코더**
 
 - 8진 표현에서, 8진 숫자(3비트)를 단일 비트의 집합으로 되돌려준다.
-  ![3:8 디코더](https://cdn.discordapp.com/attachments/879215554379018243/974669367675584603/IMG_9317.jpg)
+
+  ![3:8 디코더](https://github.com/RyanKor/book-review/assets/40455392/75ce293c-84c9-43db-9336-66fc7971c0e0)
 
 **3:8 디코더 진리표**
 
@@ -614,18 +617,22 @@ C3 = (A2 AND B2)
 ## 디멀티플렉서 (demultiplexer, 디먹스(demux))
 
 입력을 몇 가지 출력 중 한 곳으로 전달한다.
-![디멀티플렉서](https://cdn.discordapp.com/attachments/879215554379018243/974669367704965140/IMG_9319.jpg)
+
+![디멀티플렉서](https://github.com/RyanKor/book-review/assets/40455392/e363b186-bf47-41a7-98f5-8d1efce70203)
+
 D: 입력 신호
 S0~S1: 디코더 입력
 Y0~3: 출력
 
 디먹스는 D를 디코더의 입력에 따라 네 가지 출력 중 하나로 전달한다.
-![디먹스 스키매틱 기호](https://cdn.discordapp.com/attachments/879215554379018243/974669369948917832/IMG_9320.jpg)
+
+![디먹스 스키매틱 기호](https://github.com/RyanKor/book-review/assets/40455392/23983a10-f9c4-40b4-9edb-922c3de1e483)
 
 ## 실렉터 (selecor, 멀티 플렉서(multiplexer), 먹스 (mux))
 
 디코더에 게이트를 추가해 실렉터를 만들 수 있다.
-![실렉터 스키매틱 기호](https://cdn.discordapp.com/attachments/879215554379018243/974669366689951784/IMG_9322.jpg)
+
+![실렉터 스키매틱 기호](https://github.com/RyanKor/book-review/assets/40455392/80d7149d-874c-4e17-b46d-9c3c9e329101)
 
 디먹스를 뒤집은 모양이다.
 예를 들면, 다이얼에서 눈금 꺼짐, 토스트, 베이크, 브로일이라는 기호가 들어있는 토스트 오븐이 있을 때, 이 다이얼은 실렉터 스위치(selector switch)이다.
