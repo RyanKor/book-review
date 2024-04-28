@@ -45,7 +45,7 @@ ex) 프린터, 하드디스크, 키보드, 마우스
 
 CPU의 핵심 부품으로 산술 계산, 불리언 대수 및 기타 연산을 수행하는 방법을 알고 있는 장치이다.
 
-![ALU예시](https://cdn.discordapp.com/attachments/879215554379018243/982160407139581972/unknown.png)
+![ALU예시](https://github.com/RyanKor/book-review/assets/40455392/f2076124-dcb9-4b8d-8ba3-9215cbc6b352)
 
 - **피연산자**: 수를 표현하는 비트
 - **연산 코드(명령 코드)**: 피연산자에 대해 ALU가 어떤 연산자를 적용할지 지정한다.
@@ -54,7 +54,7 @@ CPU의 핵심 부품으로 산술 계산, 불리언 대수 및 기타 연산을 
 
     <br />
 
-  ![조건 코드 레지스터](https://cdn.discordapp.com/attachments/879215554379018243/982160473849987092/unknown.png)
+  ![조건 코드 레지스터](https://github.com/RyanKor/book-review/assets/40455392/57c74aab-2aa9-42bf-8f58-b20c03f3a3bd)
 
   박스 위의 숫자는 비트 번호이다. 비트 번호로 각 비트를 편리하게 가리킨다. 비트 중 일부는 사용하지 않는다.
 
@@ -65,12 +65,12 @@ CPU의 핵심 부품으로 산술 계산, 불리언 대수 및 기타 연산을 
 **ALU 명령 코드**
 ALU가 할 수 있는 일은 아래와 같다.
 
-![ALU 명령 코드](https://cdn.discordapp.com/attachments/879215554379018243/982162824128253982/IMG_9592.jpg)
+![ALU 명령 코드](https://github.com/RyanKor/book-review/assets/40455392/5a0c5c63-c695-43f1-82c8-29ffb2c22b5e)
 
 <br />
 
 ALU는 앞서 배운 실렉터와 논리 게이트를 연결한 것일 뿐이다.
-![ALU 내부](https://media.discordapp.net/attachments/879215554379018243/982162823058706462/IMG_9593.jpg?width=363&height=378)
+![ALU 내부](https://github.com/RyanKor/book-review/assets/40455392/af73ab14-f7ad-42e7-a1da-6f0864699fe6)
 
 <br />
 
@@ -97,13 +97,13 @@ ALU는 앞서 배운 실렉터와 논리 게이트를 연결한 것일 뿐이다
 
 **순차적인 시프트 레지스터**
 시프트를 제외한 ALU의 모든 기능은 조합 논리로 구현할 수 있다.
-![순차적인 시프트 레지스터](https://cdn.discordapp.com/attachments/879215554379018243/982638588892168292/unknown.png)
+![순차적인 시프트 레지스터](https://github.com/RyanKor/book-review/assets/40455392/fba2dcf9-6617-4924-ac2c-f17ec9eab152)
 
 위와 같이 클록에 따라 내용을 1비트씩 시프트하는 시프트 레지스터를 `플리플롭`을 이용해 만들 수 있다. 여기서 1비트를 시프트 할 때, 1 클록이 필요하기 때문에 느리다.
 
 **배럴 시프터**
 배럴 시프터를 사용하면 느린 문제를 해결할 수 있다.
-![배럴 시프터](https://cdn.discordapp.com/attachments/879215554379018243/982637409768460368/IMG_9606.jpg)
+![배럴 시프터](https://github.com/RyanKor/book-review/assets/40455392/c1d895f1-1616-4708-9637-99c4c87d5735)
 
 8비트 시프터를만들려면, 8:1 실렉터가 8개 필요하다.
 
