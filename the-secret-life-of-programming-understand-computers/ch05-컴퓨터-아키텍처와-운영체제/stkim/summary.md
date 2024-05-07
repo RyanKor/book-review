@@ -8,7 +8,7 @@
 
 가장 흔한 컴퓨터 구조는 **폰 노이만(von Neumann) 구조**와 **하버드(Harvard) 구조**이다.
 
-![폰 노이만 구조와 하버드 구조](https://cdn.discordapp.com/attachments/879215554379018243/985184913294770206/IMG_9623.png)
+![폰 노이만 구조와 하버드 구조](https://github.com/RyanKor/book-review/assets/40455392/b6b59256-2868-40d5-a2ff-7c61eac1f3ea)
 
 두 구조의 유일한 차이는 `메모리 배열`뿐이다.
 
