@@ -180,7 +180,7 @@ CPU가 논리 주소 346 값을 요청하면 MMU는 `Base Register` 14000을 더
 - 외부 단편화를 해결하기 위해 페이징 기법이 구현된다.
 - 페이징 기법은 프로세스를 일정 크기인 `페이지`로 잘라서 비연속적으로 메모리에 적재하는 방식
 - 페이지 번호(page number) `-p`와 페이지 참조 번호 (page offset)`-d`이 순서쌍 (p, d)으로 갖고 있다.
-
+![](https://blog.kakaocdn.net/dn/bngnap/btqGxPq1VbD/JznvchmiDZqttqqgawY9K1/img.png)
 - `frame`과 `page`는 메모리를 일정한 크기의 공간으로 나누어 관리하는 단위로, 프레임과 페이지의 크기는 같다.
 - `frame` : 물리 메모리를 일정한 크기로 나눈 블록
 - `page` : 가상 메모리를 일정한 크기로 나눈 블록
