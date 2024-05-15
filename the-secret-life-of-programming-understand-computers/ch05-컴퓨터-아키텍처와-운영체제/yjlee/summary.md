@@ -1,7 +1,7 @@
 # 기본적인 구조 요소들
 가장 흔한 컴퓨터 구조는 폰 노이만(von Neumann) 구조와 하버드(Harvard) 구조이다.
 두 구조의 유일한 차이는 메모리 배열뿐이다.
-
+![](https://mblogthumb-phinf.pstatic.net/MjAyMDA1MjhfMTk5/MDAxNTkwNjMyNjI3MzIx.5T3C2x7AiHSIVoiUYq6eqmeI8LWdbP0ZaEARSIbSZ4kg.b9GN7dtKoYYF23qTQJG4Vw_z2kaR_bR4xrNjteeSZ7og.PNG.with_msip/%EC%82%AC%EC%A7%845.PNG?type=w800) 
 폰 노이만 구조
 - 폰 노이만 구조가 나오면서, CPU, 메모리, 프로그램 구조를 갖는 범용 컴퓨터 구조가 확립되었다. (이전에는 스위치를 설치, 전선을 연결하고, 데이터를 전송해 신호를 처리하는 식으로 프로그래밍 함)
 - 명령어와 데이터를 동시에 가져올 수 없기 때문에 약간 느리다. 이를 해결하기 위해 하버드 구조가 나왔다.
