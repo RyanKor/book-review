@@ -1,4 +1,4 @@
-# 저수준 I/O (1)
+
 
 ## I/O 포트
 
@@ -7,9 +7,17 @@
 ### PORTB
 
 포트 B는 세 가지 레지스터에 의해 제어된다.
-![AVR PORTB 레지스터](https://media.discordapp.net/attachments/879215554379018243/987693143614976010/IMG_9658.jpg)
 
-![AVR 포트 B의 구성](https://cdn.discordapp.com/attachments/879215554379018243/987695694976536616/unknown.png)
+
+<img src= "https://github.com/RyanKor/book-review/assets/71623971/bed19d6a-1862-4881-b819-771c71d77e35" width="600" height="200"/>
+<br />
+
+
+<p></p>
+AVR 포트 B의 구성
+<br />
+
+<img src= "https://github.com/RyanKor/book-review/assets/71623971/442dcd79-7349-4bab-8b4b-7d93e30b0466" width="600" height="400"/>
 
 - **DDRB(데이터 방향 레지스터)**
   - PORTB에 대한 `데이터방향 레지스터`이다.
@@ -22,11 +30,10 @@
   - 핀의 값을 읽는다.
     ex) 6번, 0번 핀을 하이, 나머지를 로우로 한다. => 01000001(0x41)
 
-![포트 B에 전구와 스위치를 연결한 모습](https://cdn.discordapp.com/attachments/879215554379018243/987695166636826634/unknown.png)
+<img src="https://github.com/RyanKor/book-review/assets/71623971/df70187c-8454-41be-9ef8-6a6ffdfd5150" width="700" height="500">
 
 위는 포트 B에 전구와 스위치를 연결한 것이다. PB7은 전압을 0에서 1로 전환할 수 있고, PB0은 아무 전류도 흐르지 않는다. 전기는 PB0이 1일 때 LED를 통해 흐르고, LED를 빛나게 한다. 따라서 PORTB0 비트에 값을 넣으면 LED를 켜거나 끌 수 있다.
 
-# 저수준 I/O (2)
 
 ## 버튼을 눌러라
 
@@ -211,7 +218,6 @@ current값과 previous값을 XOR 하면 어떤 버튼이 상태가 바뀌었는�
 - [그레이 코드(Gray code)를 사용하는 이유?](https://raisonde.tistory.com/entry/%EA%B7%B8%EB%A0%88%EC%9D%B4-%EC%BD%94%EB%93%9CGray-code%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0)
 
 
-# 저수준 I/O
 
 ### 쿼드러처  
 **쿼드러처 인코딩(quadature encoding)**  
