@@ -213,7 +213,10 @@ SPI, I2C, TWI, 1-Wire 등의 인터페이스가 있다.
 - 클록이 동기화 되어야 한다
   
 ![시프트레지스터](https://user-images.githubusercontent.com/91672778/174469498-0ade6bf8-16d7-4afc-87bb-df25392fe431.png)  
-  
+
+![image](https://github.com/RyanKor/book-review/assets/71623971/e8034351-5d4d-4668-8342-0cf925d88c24)
+
+
 **마크-스페이스 신호**  
 - 처음 시작 신호 이후 각자의 타이머에 따라 작동  
 - 차이가 미미해 서로 잘 동기화  
