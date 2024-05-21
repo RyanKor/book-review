@@ -115,9 +115,11 @@ Windows 초기에는 IRQ 오류가 자주 발생했지만, 최신 버전에서�
 - `공통 애노드`: 공통핀을 애노드(+)에 연결한 경우
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/91880235/174298904-41ef44c0-bb6e-43a3-a7d6-5c12f6bf9b54.png">
 
+ ![image](https://github.com/RyanKor/book-review/assets/71623971/a940bc59-b3a2-4ec5-8529-8ed00bf47607)
+
 - 이 디스플레이를 작동 시키기 위해서는 `시각의 잔상효과를 이용한다.`
 - 1/24초보다 짧은 간격으로 깜빡일 경우 빛이 켜져있는 걸로 인식 (예시) 프레임, 타이머 인터럽트 핸들러를 사용해 사용할 수 있음)
- 
+
  
 <br>
 
