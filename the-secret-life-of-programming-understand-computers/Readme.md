@@ -2,6 +2,8 @@
 
 ![the secret life of programming: understand computers - Craft Better Code](https://github.com/RyanKor/book-review/assets/40455392/d7f280ee-5e47-443d-893b-437b5d26bcac)
 
+스터디 정리 자료는 [TheSecretLifeOfPrograms_GroupStudy](https://github.com/alsrlqor1007/TheSecretLifeOfPrograms_GroupStudy/tree/main)에 이미 정리된 내용을 가져와 사용했습니다.
+
 # Chapters
 
 - [1장. 컴퓨터 내부의 언어 체계](./ch01-컴퓨터-내부의-언어-체계/)
@@ -16,7 +18,7 @@
 
 - [6장. 입출력과 네트워킹](./ch06-입출력과-네트워킹/)
 
-- 7장. 데이터 구조와 처리
+- [7장. 데이터 구조와 처리](./ch07-데이터-구조와-처리/)
 
 - 8장. 프로그래밍 언어 처리
 
