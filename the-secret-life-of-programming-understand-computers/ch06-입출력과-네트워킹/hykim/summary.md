@@ -99,45 +99,6 @@ ex) 키보드의 키를 누를 때마다 인터럽트 처리기가 현재 진행
 만약 두 개의 하드웨어가 인터럽트 요청을 위해 동일한 채널을 사용하면 `IRQ 충돌`이 발생하기도 한다.
 Windows 초기에는 IRQ 오류가 자주 발생했지만, 최신 버전에서는 `플러그 앤 플레이`를 사용하여 충돌 문제가 거의 발생하지 않는다.
 
-<br />
-
-#### 유한 임펄스 응답 (FIR, finite impulse response)
-
-<details>
-<summary>책 내용 요약</summary>
-<div>
- 
-![FIR 필터 버튼 디바운서](https://mblogthumb-phinf.pstatic.net/MjAxNzEyMDVfMTYg/MDAxNTEyNDgzMzkyNTMy.UJGkD0YZ61FgBsxsZX6wwPygY-ptCMGFCPTz0aTivPQg.QBnTPIsy78oIVJzsyzhFXURq_rRvztq0uWK15sJ-SEkg.PNG.pro_000/%EC%BA%A1%EC%B2%98.PNG?type=w2)
- 
-FIR은 큐(queue)로, 타이머 틱이 발생할 때마다 가장 오래된 값을 버리고, 새 값을 넣으면서 각 값을 하나씩 시프트 한다.  
-배열 원소들을 OR 해서 상태를 만들어낸다.
-원소가 2개(current, previous)있는 큐의 current 입력으로 넣는다.
-current에 값을 넣기 직전 current 값은 previous로 옮긴다.
-current값과 previous값을 XOR 하면 어떤 버튼이 상태가 바뀌었는지 알 수 있다.
-</div>
-</details>
-<br />
-
-- FIR은 DSP (디지털 신호 처리)에서 원하는 특정 주파수를 거르거나 통과시키는 역할을 한다.
-- 입력 신호의 일정한 값들만을 가지고 filtering을 수행한다.
-- 회귀 성분을 갖지 않아, 동일 특성을 구현할 때 IIR 보다 구현 비용이 많이 든다.
-- 위상 변이가 중요한 경우, 반드시 FIR 필터를 사용해야 한다.
-- 아날로그 필터 응답을 시뮬레이션 할 수 없다.
-
-#### 무한 임펄스 응답 (IIR, Infinite impulse response)
-
-- 디지털 필터의 한 종류로 입력 신호 값과 출력 신호 값이 재귀적으로 적용된다.
-- 임펄스의 응답은 무한한 길이를 갖는다.
-- FIR보다 구현 비용이 적지만, 비선형성이므로 입력 파형과 출력 파형이 유사하지 않다.
-
----
-
-[참고] <br />
-[인터럽트 위키백과](https://ko.wikipedia.org/wiki/%EC%9D%B8%ED%84%B0%EB%9F%BD%ED%8A%B8) <br />
-[인터럽트 요청 위키백과](https://ko.wikipedia.org/wiki/%EC%9D%B8%ED%84%B0%EB%9F%BD%ED%8A%B8_%EC%9A%94%EC%B2%AD) <br />
-[IRQ(인터럽트요청)란 무엇입니까?](https://ko.eyewated.com/irq-%EC%9D%B8%ED%84%B0%EB%9F%BD%ED%8A%B8-%EC%9A%94%EC%B2%AD-%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9E%85%EB%8B%88%EA%B9%8C/) <br />
-[IRQ (Interrupt Request)가 무엇입니까?](https://www.sony.co.kr/electronics/support/articles/S500082584) <br />
-[IIR 필터 & FIR 필터](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=futuremain&logNo=221299403374) <br />
 
 
 # 빛이 있으라
@@ -154,10 +115,12 @@ current값과 previous값을 XOR 하면 어떤 버튼이 상태가 바뀌었는�
 - `공통 애노드`: 공통핀을 애노드(+)에 연결한 경우
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/91880235/174298904-41ef44c0-bb6e-43a3-a7d6-5c12f6bf9b54.png">
 
+ ![image](https://github.com/RyanKor/book-review/assets/71623971/a940bc59-b3a2-4ec5-8529-8ed00bf47607)
+
 - 이 디스플레이를 작동 시키기 위해서는 `시각의 잔상효과를 이용한다.`
 - 1/24초보다 짧은 간격으로 깜빡일 경우 빛이 켜져있는 걸로 인식 (예시) 프레임, 타이머 인터럽트 핸들러를 사용해 사용할 수 있음)
- 
- 
+
+ reference : https://wikidocs.net/30887
 <br>
 
 # 빛, 동작, 그리고 상호 연동
@@ -250,7 +213,10 @@ SPI, I2C, TWI, 1-Wire 등의 인터페이스가 있다.
 - 클록이 동기화 되어야 한다
   
 ![시프트레지스터](https://user-images.githubusercontent.com/91672778/174469498-0ade6bf8-16d7-4afc-87bb-df25392fe431.png)  
-  
+
+![image](https://github.com/RyanKor/book-review/assets/71623971/e8034351-5d4d-4668-8342-0cf925d88c24)
+
+
 **마크-스페이스 신호**  
 - 처음 시작 신호 이후 각자의 타이머에 따라 작동  
 - 차이가 미미해 서로 잘 동기화  
