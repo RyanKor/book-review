@@ -62,7 +62,7 @@ ex) `<a>...</a>`,`<em>...</em>`,`<strong>...</strong>`
 
 ### 속성(attributes)
 해당 엘리먼트에 실제로 표시되지는 않지만 추가적인 내용을 담고 싶을 때 사용  
-속성 이름에 따라 미리 정의도니 동작이 있는 경우도 있다  
+속성 이름에 따라 미리 정의된 동작이 있는 경우도 있다  
 ex) `<a href='https://roadgram.net'>링크</a>`,`<input type='text'>text</input>`
 
 
