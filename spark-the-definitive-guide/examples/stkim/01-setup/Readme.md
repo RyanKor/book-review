@@ -20,3 +20,5 @@ Total sum from 1 to 1000000 using local Python: 500000500000
 Local execution time: 0.034537315368652344 seconds
 Local Python is faster by 2.93 seconds.
 ```
+
+![spark_result](../../../images/stkim/spark_result.png)
