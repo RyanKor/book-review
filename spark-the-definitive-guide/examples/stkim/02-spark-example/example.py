@@ -2,21 +2,13 @@ from pyspark.sql import SparkSession
 from pyspark import SparkConf
 
 # SparkConf 설정 (Docker Compose 환경에 맞춰 마스터 URL 지정)
-conf = SparkConf() \
-    .setAppName("DockerComposeSparkPerformanceTest") \
-    .setMaster("spark://localhost:7077")
-
-# SparkSession 생성
 spark = SparkSession.builder \
-    .config(conf=conf) \
+    .appName("definitive spark chapter 02") \
+    .master("spark://localhost:7077") \
     .getOrCreate()
 
-myRange = spark.range(1000).toDF("number")
-
-
-# COMMAND ----------
-
-divisBy2 = myRange.where("number % 2 = 0")
+# 로깅 수준 설정 (선택 사항)
+spark.sparkContext.setLogLevel("ERROR")
 
 
 # COMMAND ----------
@@ -25,7 +17,7 @@ flightData2015 = spark\
   .read\
   .option("inferSchema", "true")\
   .option("header", "true")\
-  .csv("/data/2015-summary.csv")
+  .csv('file:///mnt/nvme/dataset/spark/2015-summary.csv')
 
 # 데이터 미리보기
 flightData2015.show()
