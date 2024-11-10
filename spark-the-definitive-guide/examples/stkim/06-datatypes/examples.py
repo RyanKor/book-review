@@ -10,6 +10,7 @@ spark = SparkSession.builder \
 # 로깅 수준 설정 (선택 사항)
 spark.sparkContext.setLogLevel("ERROR")
 
+# printScheme -> 컬럼명과 데이터 타입 한 번에 조회
 df = spark.read.format("csv")\
   .option("header", "true")\
   .option("inferSchema", "true")\
@@ -18,13 +19,13 @@ df.printSchema()
 df.createOrReplaceTempView("dfTable")
 
 
-# COMMAND ----------
+# 5장에서도 언급했던 데이터 타입 변환 메서드인 lit이 있음.
 
 from pyspark.sql.functions import lit
 df.select(lit(5), lit("five"), lit(5.0))
 
 
-# COMMAND ----------
+# Boolean 타입 데이터 사용
 
 from pyspark.sql.functions import col
 df.where(col("InvoiceNo") != 536365)\
@@ -366,7 +367,7 @@ df.selectExpr("(InvoiceNo, Description) as myStruct")\
   .select(from_json(col("newJSON"), parseSchema), col("newJSON")).show(2)
 
 
-# COMMAND ----------
+# UDF (User Defined Function) -> 사용자가 커스텀 스파크 함수를 구현하는 것이 가능함
 
 udfExampleDF = spark.range(5).toDF("num")
 def power3(double_value):
@@ -386,8 +387,8 @@ from pyspark.sql.functions import col
 udfExampleDF.select(power3udf(col("num"))).show(2)
 
 
-# COMMAND ----------
-
+# 단, 구현하고 스파크에서 사용하려면 반드시 udf.register로 등록 시켜야함.
+spark.udf.register("power3", power3, DoubleType())
 udfExampleDF.selectExpr("power3(num)").show(2)
 # 스칼라로 등록된 UDF 사용
 
@@ -399,7 +400,6 @@ spark.udf.register("power3py", power3, DoubleType())
 
 
 # COMMAND ----------
-
 udfExampleDF.selectExpr("power3py(num)").show(2)
 # 파이썬으로 등록된 UDF 사용
 
