@@ -13,12 +13,12 @@ spark.sparkContext.setLogLevel("ERROR")
 df = spark.read.format("json").load("/mnt/nvme/dataset/spark/flight-data/json/2015-summary.json")
 
 
-# COMMAND ----------
+# 스키마 조회하기
 
 spark.read.format("json").load("/mnt/nvme/dataset/spark/flight-data/json/2015-summary.json").schema
 
 
-# COMMAND ----------
+# 컬럼의 기본 데이터 타입은 StructType임.
 
 from pyspark.sql.types import StructField, StructType, StringType, LongType
 
@@ -31,38 +31,38 @@ df = spark.read.format("json").schema(myManualSchema)\
   .load("/mnt/nvme/dataset/spark/flight-data/json/2015-summary.json")
 
 
-# COMMAND ----------
+# col 메서드로 컬럼 참조 가능.
 
 from pyspark.sql.functions import col, column
 col("someColumnName")
 column("someColumnName")
 
 
-# COMMAND ----------
+# 표현식으로 컬럼 표현하기
 
 from pyspark.sql.functions import expr
 expr("(((someCol + 5) * 200) - 6) < otherCol")
 
 
-# COMMAND ----------
+# 로우 생성하기
 
 from pyspark.sql import Row
 myRow = Row("Hello", None, 1, False)
 
 
-# COMMAND ----------
+# 생성한 로우 조회
 
 myRow[0]
 myRow[2]
 
 
-# COMMAND ----------
+# DataFrame 생성 1
 
 df = spark.read.format("json").load("/mnt/nvme/dataset/spark/flight-data/json/2015-summary.json")
 df.createOrReplaceTempView("dfTable")
 
 
-# COMMAND ----------
+# DataFrame 생성 2
 
 from pyspark.sql import Row
 from pyspark.sql.types import StructField, StructType, StringType, LongType
@@ -76,17 +76,17 @@ myDf = spark.createDataFrame([myRow], myManualSchema)
 myDf.show()
 
 
-# COMMAND ----------
+# select 메서드 사용해서 SQL을 스파크에서 이용하기.
 
 df.select("DEST_COUNTRY_NAME").show(2)
 
 
-# COMMAND ----------
+# 여러 컬럼을 select 메서드 사용해서 확인하기
 
 df.select("DEST_COUNTRY_NAME", "ORIGIN_COUNTRY_NAME").show(2)
 
 
-# COMMAND ----------
+# 표현식, col, column을 섞어가면서 select 메서드 사용 가능 
 
 from pyspark.sql.functions import expr, col, column
 df.select(
@@ -125,13 +125,13 @@ df.selectExpr(
 df.selectExpr("avg(count)", "count(distinct(DEST_COUNTRY_NAME))").show(2)
 
 
-# COMMAND ----------
+# 스파크 데이터 타입으로 변환하기
 
 from pyspark.sql.functions import lit
 df.select(expr("*"), lit(1).alias("One")).show(2)
 
 
-# COMMAND ----------
+# 컬럼의 데이터 타입 변경하기
 
 df.withColumn("numberOne", lit(1)).show(2)
 
@@ -183,7 +183,7 @@ df.select("ORIGIN_COUNTRY_NAME", "DEST_COUNTRY_NAME").distinct().count()
 df.select("ORIGIN_COUNTRY_NAME").distinct().count()
 
 
-# COMMAND ----------
+# 로우에서 무작위 샘플 얻기.
 
 seed = 5
 withReplacement = False
@@ -209,7 +209,7 @@ parallelizedRows = spark.sparkContext.parallelize(newRows)
 newDF = spark.createDataFrame(parallelizedRows, schema)
 
 
-# COMMAND ----------
+# 로우 합치기와 추가하기
 
 df.union(newDF)\
   .where("count = 1")\
@@ -231,7 +231,7 @@ df.orderBy(expr("count desc")).show(2)
 df.orderBy(col("count").desc(), col("DEST_COUNTRY_NAME").asc()).show(2)
 
 
-# COMMAND ----------
+# 트랜스포메이션 실행 전, 파티션을 정렬해서 최적화하는 시도를 수행할 수 있음 -> sortWithPartitions
 
 spark.read.format("json").load("/mnt/nvme/dataset/spark/flight-data/json/*-summary.json")\
   .sortWithinPartitions("count")
@@ -257,7 +257,7 @@ df.rdd.getNumPartitions() # 1
 df.repartition(5)
 
 
-# COMMAND ----------
+# 특정 칼럼을 기반으로 리파티셔닝 -> 자주 필터로 사용하는 컬럼을 기준으로 파티션을 재구성하면 연산 속도가 빨라짐. 자주 사용하는 컬럼 필터일수록 효과가 큼.
 
 df.repartition(col("DEST_COUNTRY_NAME"))
 
