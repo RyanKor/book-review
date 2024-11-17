@@ -384,12 +384,12 @@ power3udf = udf(power3)
 # COMMAND ----------
 
 from pyspark.sql.functions import col
-udfExampleDF.select(power3udf(col("num"))).show(2)
+udfExampleDF.select(power3udf(col("num"))).show(2) # 컴파일러 IDE -> 에러인지 정상 코드인지 체크를 미리 해줍니다. 사용자가 실제 문제 있기 전에 파악 가능!
 
 
 # 단, 구현하고 스파크에서 사용하려면 반드시 udf.register로 등록 시켜야함.
 spark.udf.register("power3", power3, DoubleType())
-udfExampleDF.selectExpr("power3(num)").show(2)
+udfExampleDF.selectExpr("power3(num)").show(2) # power3 함수가 실제로 있는지, 없는지 체크 못함 -> 왜냐? 얘는 IDE 상에서 함수 문법이 아닌, 문자열로 표기 되어 있기 때문이죠?
 # 스칼라로 등록된 UDF 사용
 
 

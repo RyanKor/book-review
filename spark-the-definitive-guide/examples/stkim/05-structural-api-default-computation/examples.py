@@ -259,6 +259,12 @@ df.repartition(5)
 
 # 특정 칼럼을 기반으로 리파티셔닝 -> 자주 필터로 사용하는 컬럼을 기준으로 파티션을 재구성하면 연산 속도가 빨라짐. 자주 사용하는 컬럼 필터일수록 효과가 큼.
 
+# coalesce vs repartition
+
+# coalesce : 파티션 갯수 줄일 때 사용.
+
+# repartition : 셔플 및 미래에 데이터가 늘어날 것을 감안해서 사용.
+
 df.repartition(col("DEST_COUNTRY_NAME"))
 
 
