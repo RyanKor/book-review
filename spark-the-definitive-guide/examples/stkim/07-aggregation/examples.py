@@ -13,6 +13,9 @@ spark.sparkContext.setLogLevel("ERROR")
 # coalesce는 파티션 갯수 줄일 때만 사용.
 # 셔플이 반드시 동반되지 않는 기능임.
 # 여기서 파티션 수를 줄이는 이유는 적은 양의 데이터를 가진 수많은 파일이 있기 때문.
+# 쓰기 작업 -> 들어오는대로 바로 파일로 만드는 게 성능이 더 좋다 (스파크 - 유진님 의견)
+# 파일이 많으면 읽기할 때 성능이 느려짐. 그래서 쓰기는 받는대로 파일 만듦.
+# 스파크는 작은 파일 많아지면 성능이 느림.
 df = spark.read.format("csv")\
   .option("header", "true")\
   .option("inferSchema", "true")\
