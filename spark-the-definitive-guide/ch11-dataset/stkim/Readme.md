@@ -51,14 +51,41 @@
 
 ### 2.2 스칼라: 케이스 클래스
 
+- 정규 클래스 (regular class)로, 4가지 특징이 있음
+
+    - 불변성
+    - 패턴 매칭으로 분해 가능
+    - 참조값 대신 클래스 구조 기반 비교
+    - 사용하기 쉽고 다루기 편함 (뭘 근거로??)
+
 ## 3. 액션
+
+- Dataset & DataFrame: collect, take, count 같은 액션 사용 가능.
 
 ## 4. 트랜스포메이션
 
+- Dataset의 트랜스포메이션은 DataFrame과 동일함.
+
 ### 4.1 필터링
+- filter 메서드 사용
 
 ### 4.2 매핑
+- map 메서드 사용.
+- Dataset의 select 메서드 사용하는 것과 비슷함.
+- String 타입의 Dataset 반환.
 
 ## 5. 조인
 
+- joinWith 메서드 저공
+
+- co-group(RDD용어)와 거의 유사하고, Dataset 안쪽에 다른 두 개의 중첩된 Dataset으로 구성.
+
 ## 6. 그룹화와 집계
+
+- groupBy, rollup, cube 메서드 사용 가능.
+
+    - 단, Dataset 대신 DataFrame 반환하는 메서드들이라 데이터 타입 정보를 잃음.
+
+- 이런 상황에서 그룹화와 집계를 사용하면 (groupByKey) Dataset의 특정 키를 기준으로 그룹화하고 형식화된 Dataset 반환.
+
+- 타입에 대해 유연하게 대응할 수 있지만, JVM 데이터 타입에 최적화할 수 있는 상황을 잃음.
