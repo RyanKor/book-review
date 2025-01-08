@@ -4,6 +4,7 @@ from pyspark import SparkConf
 # SparkConf 설정 (Docker Compose 환경에 맞춰 마스터 URL 지정)
 spark = SparkSession.builder \
     .appName("definitive spark chapter 09 - Data Source") \
+    .config("spark.jars", "/opt/bitnami/spark/extra-jars/sqlite-jdbc-3.47.1.0.jar") \
     .master("spark://localhost:7077") \
     .getOrCreate()
 
